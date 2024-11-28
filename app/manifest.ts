@@ -7,7 +7,6 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Local Notes",
     short_name: "Local Notes",
     description: "Local Notes",
-    start_url: "/",
     display: "standalone",
     background_color: "#fff",
     theme_color: "#fff",
