@@ -6,6 +6,7 @@
 import { PHASE_PRODUCTION_BUILD } from "next/constants.js";
 
 export default (phase, { defaultConfig }) => {
+  console.log({ phase });
   if (phase === PHASE_PRODUCTION_BUILD) {
     return {
       output: "export",
