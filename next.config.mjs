@@ -3,11 +3,14 @@
 //   PHASE_PRODUCTION_BUILD,
 // } = require("next/constants");
 
-import { PHASE_PRODUCTION_BUILD } from "next/constants.js";
+import {
+  PHASE_PRODUCTION_BUILD,
+  PHASE_PRODUCTION_SERVER,
+} from "next/constants.js";
 
 export default (phase, { defaultConfig }) => {
-  console.log({ phase });
-  if (phase === PHASE_PRODUCTION_BUILD) {
+  if ([PHASE_PRODUCTION_BUILD, PHASE_PRODUCTION_SERVER].includes(phase)) {
+    console.log(phase);
     return {
       output: "export",
       basePath: "/local-notes",
