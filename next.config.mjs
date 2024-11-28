@@ -8,7 +8,9 @@ export default (phase, { defaultConfig }) => {
     return {
       output: "export",
       basePath: "/local-notes",
-      assetPrefix: "/local-notes",
+      publicRuntimeConfig: {
+        basePath: "/local-notes",
+      },
       images: {
         unoptimized: true,
       },
@@ -17,6 +19,9 @@ export default (phase, { defaultConfig }) => {
 
   return {
     output: "export",
+    publicRuntimeConfig: {
+      basePath: "",
+    },
     images: {
       unoptimized: true,
     },

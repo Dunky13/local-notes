@@ -2,6 +2,8 @@
 // import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import getConfig from "next/config";
+const { publicRuntimeConfig } = getConfig();
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,8 +26,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { basePath } = publicRuntimeConfig;
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href={`${basePath}/manifest.json`} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
